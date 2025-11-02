@@ -12,17 +12,17 @@ const InteractiveSpotlight = () => {
   const glowOpacity = useTransform(scrollYProgress, [0, 1], [0.25, 0.6]);
 
   return (
-    <section ref={ref} className="relative mx-auto max-w-7xl px-6 py-24">
+    <section ref={ref} id="spotlight" className="relative mx-auto max-w-7xl px-6 py-28">
       {/* Background glow */}
       <motion.div
         aria-hidden
         style={{ opacity: glowOpacity }}
-        className="pointer-events-none absolute inset-0 -z-0"
+        className="pointer-events-none absolute inset-0 z-0"
       >
-        <div className="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-orange-500/20 via-amber-400/10 to-transparent blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-orange-500/20 via-amber-400/10 to-transparent blur-3xl" />
       </motion.div>
 
-      <div className="relative z-10 grid items-center gap-10 md:grid-cols-2">
+      <div className="relative z-10 grid items-center gap-12 md:grid-cols-2">
         <div>
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
@@ -42,11 +42,24 @@ const InteractiveSpotlight = () => {
           >
             Our smartwatch responds to your movement. As you scroll, it turns to reveal its sculpted edges and polished glass. Hover to feel it lift, just like it’s suspended in mid‑air.
           </motion.p>
-          <div className="mt-6 flex items-center gap-3">
+
+          {/* Spec bullets */}
+          <ul className="mt-6 grid grid-cols-2 gap-3 text-sm text-zinc-300">
+            {[
+              'Always‑On LTPO Display',
+              'ECG + SpO₂ Sensors',
+              '7‑Day Battery',
+              '50m Water Resistant',
+            ].map((s) => (
+              <li key={s} className="rounded-lg border border-white/10 bg-zinc-900/40 px-3 py-2">{s}</li>
+            ))}
+          </ul>
+
+          <div className="mt-7 flex items-center gap-3">
             <a href="#products" className="inline-flex items-center justify-center rounded-lg bg-orange-500 px-5 py-2.5 font-medium text-black transition hover:brightness-110">
               Explore Products
             </a>
-            <a href="#" className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-5 py-2.5 font-medium text-white/90 backdrop-blur-xl transition hover:bg-white/10">
+            <a href="#features" className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-5 py-2.5 font-medium text-white/90 backdrop-blur-xl transition hover:bg-white/10">
               Learn More
             </a>
           </div>
@@ -57,7 +70,7 @@ const InteractiveSpotlight = () => {
           style={{ rotate, y: translateY }}
           whileHover={{ y: -12, scale: 1.02 }}
           transition={{ type: 'spring', stiffness: 120, damping: 16 }}
-          className="relative mx-auto h-80 w-80"
+          className="relative mx-auto h-[340px] w-[340px] sm:h-96 sm:w-96"
           aria-label="Interactive 3D-like smartwatch preview"
           role="img"
         >

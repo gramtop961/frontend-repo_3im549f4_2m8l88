@@ -1,23 +1,23 @@
 import React from 'react';
 import Hero from './components/Hero.jsx';
+import Features from './components/Features.jsx';
 import InteractiveSpotlight from './components/InteractiveSpotlight.jsx';
 import ProductShowcase from './components/ProductShowcase.jsx';
-import Footer from './components/Footer.jsx';
 
 function App() {
   return (
     <div className="min-h-screen bg-black text-zinc-200 selection:bg-orange-500/30 selection:text-orange-200">
-      {/* Hero with interactive Spline scene */}
+      {/* Immersive hero with Spline 3D */}
       <Hero />
 
-      {/* Scroll-reactive smartwatch spotlight */}
+      {/* Value props with iconography */}
+      <Features />
+
+      {/* Scroll-reactive 3D-style spotlight */}
       <InteractiveSpotlight />
 
-      {/* Product showcase for smartwatches, earpods, and accessories */}
+      {/* Product grid with rich visuals and CTA */}
       <ProductShowcase />
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

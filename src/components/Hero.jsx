@@ -16,9 +16,10 @@ const Hero = () => {
       {/* Soft radial vignette to deepen the dark theme */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_40%,#000_85%)]" />
 
-      {/* Orange glow accent */}
-      <div className="pointer-events-none absolute -inset-40 opacity-30 mix-blend-color-dodge [filter:blur(80px)]" aria-hidden>
-        <div className="absolute left-1/3 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/20" />
+      {/* Layered glow accents */}
+      <div className="pointer-events-none absolute -inset-32 opacity-40 mix-blend-color-dodge [filter:blur(100px)]" aria-hidden>
+        <div className="absolute left-[20%] top-[35%] h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/20" />
+        <div className="absolute right-[15%] top-[55%] h-60 w-60 -translate-y-1/2 rounded-full bg-amber-400/15" />
       </div>
 
       {/* Content */}
@@ -51,15 +52,30 @@ const Hero = () => {
           Explore next‑gen smartwatches, earpods, and accessories designed for motion, clarity, and all‑day comfort.
         </motion.p>
 
+        {/* Quick highlights */}
+        <motion.ul
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.65 }}
+          className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs text-zinc-300 md:text-sm"
+          aria-label="Key product highlights"
+        >
+          {['Spatial Audio','ECG & Health','7‑Day Battery','MagSafe Charging'].map((t) => (
+            <li key={t} className="rounded-full border border-white/10 bg-black/30 px-3 py-1 backdrop-blur">
+              {t}
+            </li>
+          ))}
+        </motion.ul>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.65 }}
+          transition={{ duration: 0.9, delay: 0.75 }}
           className="mt-8 flex flex-col items-center gap-3 sm:flex-row"
         >
           <a
             href="#products"
-            className="group inline-flex items-center justify-center rounded-lg bg-orange-500 px-6 py-3 font-medium text-black shadow-[0_0_0_0_rgba(251,146,60,0.6)] transition-all duration-300 hover:shadow-[0_0_40px_8px_rgba(251,146,60,0.15)]"
+            className="group inline-flex items-center justify-center rounded-lg bg-orange-500 px-6 py-3 font-medium text-black shadow-[0_0_0_0_rgba(251,146,60,0.6)] transition-all duration-300 hover:shadow-[0_0_40px_8px_rgba(251,146,60,0.18)]"
           >
             Shop the Collection
             <span className="ml-2 inline-block transition-transform group-hover:translate-x-0.5">→</span>
@@ -70,6 +86,17 @@ const Hero = () => {
           >
             See it in Motion
           </a>
+        </motion.div>
+
+        {/* Scroll hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-zinc-400"
+          aria-hidden
+        >
+          Scroll
         </motion.div>
       </div>
     </section>
