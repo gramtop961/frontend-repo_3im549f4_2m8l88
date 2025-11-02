@@ -8,7 +8,7 @@ const Hero = () => {
       {/* 3D Scene */}
       <div className="absolute inset-0">
         <Spline 
-          scene="https://prod.spline.design/xXD1hOqciVNtJX50/scene.splinecode" 
+          scene="https://prod.spline.design/4JFCLsE5jz72cZzw/scene.splinecode" 
           style={{ width: '100%', height: '100%' }}
         />
       </div>
@@ -30,7 +30,7 @@ const Hero = () => {
           className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs tracking-wider text-zinc-300 backdrop-blur-xl"
         >
           <span className="h-2 w-2 animate-pulse rounded-full bg-orange-400" />
-          Welcome to HopeTech
+          HopeTech • Smart Audio & Wearables
         </motion.span>
 
         <motion.h1
@@ -39,7 +39,7 @@ const Hero = () => {
           transition={{ duration: 0.9, delay: 0.35 }}
           className="font-['Manrope'] text-4xl font-extrabold leading-tight text-white drop-shadow-sm md:text-6xl"
         >
-          Smart Accessories for the<br className="hidden sm:block" /> New Age
+          Intelligent Sound. Seamless Wear.
         </motion.h1>
 
         <motion.p
@@ -48,7 +48,7 @@ const Hero = () => {
           transition={{ duration: 0.9, delay: 0.5 }}
           className="mt-4 max-w-2xl text-base text-zinc-300 md:text-lg"
         >
-          Discover matte-black, future-ready gear infused with intelligent design. Built to perform. Styled to impress.
+          Explore next‑gen smartwatches, earpods, and accessories designed for motion, clarity, and all‑day comfort.
         </motion.p>
 
         <motion.div
@@ -65,10 +65,10 @@ const Hero = () => {
             <span className="ml-2 inline-block transition-transform group-hover:translate-x-0.5">→</span>
           </a>
           <a
-            href="#features"
+            href="#spotlight"
             className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-6 py-3 font-medium text-white/90 backdrop-blur-xl transition hover:bg-white/10"
           >
-            Why HopeTech
+            See it in Motion
           </a>
         </motion.div>
       </div>
